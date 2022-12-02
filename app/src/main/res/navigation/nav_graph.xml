@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/recyclerFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.lab4.fragments.detailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_editFragment2"
+            app:destination="@id/editFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.example.lab4.fragments.RecyclerFragment"
+        android:label="fragment_recycler"
+        tools:layout="@layout/fragment_recycler" >
+        <action
+            android:id="@+id/action_recyclerFragment_to_detailFragment2"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_recyclerFragment_to_addProjectFragment2"
+            app:destination="@id/addProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.lab4.fragments.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProjectFragment"
+        android:name="com.example.lab4.fragments.AddProjectFragment"
+        android:label="fragment_add_project"
+        tools:layout="@layout/fragment_add_project" >
+        <action
+            android:id="@+id/action_addProjectFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
+    </fragment>
+</navigation>
